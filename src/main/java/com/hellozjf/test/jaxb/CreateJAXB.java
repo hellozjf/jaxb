@@ -79,9 +79,9 @@ public class CreateJAXB {
         for (int i = 0; i < files.length; i++) {
             File file = files[i];
             if (file.getName().endsWith(".xml")) {
-                createXSD(file);
-                String name = file.getName().replaceAll(".xml", "");
-                Runtime.getRuntime().exec("xjc -d " + getCurrentProjectPath() + "/src/main/java/" + " -p com.hellozjf.test.jaxb." + name + " xsd/" + name + ".xsd");
+//                createXSD(file);
+                String name = file.getName().replaceAll(".xml", "").toLowerCase();
+                Runtime.getRuntime().exec("xjc -encoding utf-8 -d " + getCurrentProjectPath() + "/src/main/java/" + " -p com.hellozjf.test.u8eai.domain.jaxb." + name + " xsd/" + name + ".xsd");
             }
         }
         
